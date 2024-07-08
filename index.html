@@ -12,15 +12,14 @@
                 }
 
                 function getHumanChoice() {
-                    if (choice = 1) {
-                        return "Rock"
-                    } else if (choice = 2) {
-                        return "Paper"
-                    } else if (choice = 3) {
-                        return "Scissors"
-                    } else return "Please pick again"
-
-                    let choice = prompt("1 = Rock 2 = Paper 3 = Scissors")
+                    let choice = prompt("1 = Rock, 2 = Paper, 3 = Scissors")
+                    if (choice === "1") {
+                        return "Rock";
+                    } else if (choice === "2") {
+                        return "Paper";
+                    } else if (choice === "3") {
+                        return "Scissors";
+                    } else return "Pick Again"
 
                 }
             console.log(getHumanChoice())
