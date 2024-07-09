@@ -2,13 +2,17 @@
     <html>
         <body>
             <script>
+                /* Global Variables */ 
+                let humanScore = 0
+                let computerScore = 0
+
                 function getComputerChoice() {
                    let option = (Math.random()*100)
                    if (option <= 33) {
-                    return "rock";
+                    return "Rock";
                    } else if (option >= 33 && option <= 67) {
-                    return "paper";
-                   } else return "scissors"; 
+                    return "Paper";
+                   } else return "Scissors"; 
                 }
 
                 function getHumanChoice() {
@@ -20,10 +24,54 @@
                     } else if (choice === "3") {
                         return "Scissors";
                     } else return "Pick Again"
-
                 }
-            console.log(getHumanChoice())
 
+                function playRound(computerChoice, humanChoice) {
+                    if (computerChoice === "Rock" && humanChoice === "Rock") {
+                        return "Draw!";
+                    }
+                    else if (computerChoice === "Rock" && humanChoice === "Paper") {
+                        ++humanScore;
+                        return "Human Wins!";
+                    }
+                    else if (computerChoice === "Rock" && humanChoice === "Scissors") {
+                        ++computerScore;
+                        return "Computer Wins!";
+                    }
+                    else if (computerChoice === "Scissors" && humanChoice === "Rock") {
+                        ++humanScore;
+                        return "Human Wins!";
+                    }
+                    else if (computerChoice === "Scissors" && humanChoice === "Paper") {
+                        ++computerScore;
+                        return "Computer Wins!";
+                    }
+                    else if (computerChoice === "Scissors" && humanChoice === "Scissors") {
+                        return "Draw!";
+                    }
+                    else if (computerChoice === "Paper" && humanChoice === "Rock") {
+                        ++computerScore;
+                        return "Computer Wins!";
+                    }
+                    else if (computerChoice === "Paper" && humanChoice === "Paper") {
+                        return "Draw!";
+                    }
+                    else if (computerChoice === "Paper" && humanChoice === "Scissors") {
+                        ++humanScore;
+                        return "Human Wins!";
+                    }
+                }
+
+                const humanChoice = getHumanChoice();
+                const computerChoice = getComputerChoice();
+
+                playRound(humanChoice, computerChoice);
+
+                
+                console.log(getComputerChoice())
+                console.log(playRound(humanChoice, computerChoice))
+                console.log(humanScore)
+                console.log(computerScore)
             </script>
         </body>
     </html>
