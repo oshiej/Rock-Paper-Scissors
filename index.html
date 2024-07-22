@@ -31,47 +31,45 @@
                         return "Draw!";
                     }
                     else if (computerChoice === "Rock" && humanChoice === "Paper") {
-                        ++humanScore;
+                        humanScore = ++humanScore;
                         return "Human Wins!";
                     }
                     else if (computerChoice === "Rock" && humanChoice === "Scissors") {
-                        ++computerScore;
+                        computerScore = ++computerScore;
                         return "Computer Wins!";
                     }
                     else if (computerChoice === "Scissors" && humanChoice === "Rock") {
-                        ++humanScore;
+                        humanScore = ++humanScore;
                         return "Human Wins!";
                     }
                     else if (computerChoice === "Scissors" && humanChoice === "Paper") {
-                        ++computerScore;
+                        computerScore = ++computerScore;
                         return "Computer Wins!";
                     }
                     else if (computerChoice === "Scissors" && humanChoice === "Scissors") {
                         return "Draw!";
                     }
                     else if (computerChoice === "Paper" && humanChoice === "Rock") {
-                        ++computerScore;
+                        computerScore = ++computerScore;
                         return "Computer Wins!";
                     }
                     else if (computerChoice === "Paper" && humanChoice === "Paper") {
                         return "Draw!";
                     }
                     else if (computerChoice === "Paper" && humanChoice === "Scissors") {
-                        ++humanScore;
+                        humanScore = ++humanScore;
                         return "Human Wins!";
                     }
                 }
 
                 const humanChoice = getHumanChoice();
                 const computerChoice = getComputerChoice();
+                const result = playRound(humanChoice, computerChoice)
 
-                playRound(humanChoice, computerChoice);
-
-                
                 console.log(getComputerChoice())
-                console.log(playRound(humanChoice, computerChoice))
-                console.log(humanScore)
-                console.log(computerScore)
+                console.log(result)
+                console.log("Human Score " + humanScore)
+                console.log("Computer Score " + computerScore)
             </script>
         </body>
     </html>
